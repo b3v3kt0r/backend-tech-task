@@ -49,3 +49,8 @@ Testing:
 ```
 python -m pytest -v app/tests for testing 
 ```
+
+Імпорт Events з CSV:
+```
+python -m cli.import_events data/events_sample.csv
+```
