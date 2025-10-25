@@ -30,6 +30,11 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Імпорт Events з CSV:
+```
+python -m cli.import_events data/events_sample.csv
+```
+
 Performance Benchmark:
 ```
 python benchmark.py
