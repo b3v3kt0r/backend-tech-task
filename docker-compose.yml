@@ -1,0 +1,40 @@
+services:
+
+  backend:
+    build: .
+    ports:
+      - 8000:8000
+    depends_on:
+      - redis
+      - celery
+    container_name: events_service
+    volumes:
+      - ./:/app
+    restart: always
+
+  redis:
+    image: redis:7.4.2-alpine
+    ports:
+      - 6379:6379
+    container_name: redis_broker
+    restart: always
+  
+  celery:
+    build: .
+    container_name: celery_worker
+    command: ["celery", "-A", "app.celery_", "worker", "--loglevel=info", "--concurrency=1"]
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    restart: always
+
+  celery_beat:
+    build: .
+    container_name: celery_beat
+    command: celery -A app.celery_ beat --loglevel=info
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+    restart: always
