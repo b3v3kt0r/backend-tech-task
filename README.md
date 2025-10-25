@@ -25,6 +25,11 @@ Linux/macOS
 source .venv/bin/activate
 ```
 
+Встановити залежності
+```bash
+pip install -r requirements.txt
+```
+
 Performance Benchmark:
 ```
 python benchmark.py
