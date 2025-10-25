@@ -10,6 +10,21 @@
 docker-compose up --build
 ```
 
+Активація .venv для тестування без докера.
+
+```bash
+python -m venv .venv
+```
+
+Windows
+```
+.venv\Scripts\activate
+```
+Linux/macOS
+```
+source .venv/bin/activate
+```
+
 Performance Benchmark:
 ```
 python benchmark.py
