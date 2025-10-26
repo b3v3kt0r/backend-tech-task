@@ -52,7 +52,7 @@ python benchmark.py
 
 Testing:
 ```
-python -m pytest -v app/tests for testing 
+python -m pytest -v app/tests
 ```
 
 Імпорт Events з CSV:
