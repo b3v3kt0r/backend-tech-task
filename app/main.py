@@ -195,7 +195,6 @@ def get_top_events(
     try:
         duck_res = crud.get_top_events_duck(from_, to, limit)
         if duck_res:
-            print(duck_res)
             return duck_res
     except Exception as e:
         logger.warning(f"Top-events DuckDB failed: {e}")
