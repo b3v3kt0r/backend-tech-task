@@ -10,7 +10,7 @@ def test_create_events_idempotent(db_session):
     event_data = EventCreate(
         event_id=test_uuid,
         occurred_at=datetime.now(),
-        user_id="user1",
+        user_id=1,
         event_type="login",
         properties={"foo": "bar"},
     )
@@ -28,21 +28,21 @@ def test_get_dau_and_top_events(db_session):
         EventCreate(
             event_id=uuid4(),
             occurred_at=now,
-            user_id="user2",
+            user_id=2,
             event_type="login",
             properties={},
         ),
         EventCreate(
             event_id=uuid4(),
             occurred_at=now,
-            user_id="user3",
+            user_id=3,
             event_type="purchase",
             properties={},
         ),
         EventCreate(
             event_id=uuid4(),
             occurred_at=now,
-            user_id="user2",
+            user_id=2,
             event_type="login",
             properties={},
         ),
@@ -65,21 +65,21 @@ def test_ingest_to_dau(db_session):
         EventCreate(
             event_id=uuid4(),
             occurred_at=datetime.now(),
-            user_id="u1",
+            user_id=1,
             event_type="login",
             properties={},
         ),
         EventCreate(
             event_id=uuid4(),
             occurred_at=datetime.now(),
-            user_id="u2",
+            user_id=2,
             event_type="login",
             properties={},
         ),
         EventCreate(
             event_id=uuid4(),
             occurred_at=datetime.now(),
-            user_id="u1",
+            user_id=1,
             event_type="purchase",
             properties={},
         ),

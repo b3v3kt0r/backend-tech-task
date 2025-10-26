@@ -21,7 +21,7 @@ class TaskStatus(BaseModel):
 class EventBase(BaseModel):
     event_id: UUID
     occurred_at: datetime
-    user_id: str
+    user_id: int
     event_type: str
     properties: Optional[dict[str, Any]] = None
 

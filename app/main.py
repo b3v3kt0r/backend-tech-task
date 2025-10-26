@@ -89,7 +89,7 @@ async def add_events(request: Request, events_data: List[schemas.EventCreate]):
     Accepts a JSON array of event objects. Each event contains:
       - event_id (UUID)
       - occurred_at (ISO-8601 datetime)
-      - user_id (string)
+      - user_id (int)
       - event_type (string)
       - properties (JSON object, optional)
 

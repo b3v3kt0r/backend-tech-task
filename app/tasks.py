@@ -39,7 +39,7 @@ def sync_events_to_duck():
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS events (
-            user_id TEXT,
+            user_id INTEGER,
             occurred_at TIMESTAMP,
             event_type TEXT,
             properties JSON
