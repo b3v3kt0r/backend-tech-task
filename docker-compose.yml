@@ -28,6 +28,7 @@ services:
     volumes:
       - .:/app
     restart: always
+    entrypoint: ["/entrypoint.sh"]
 
   celery_beat:
     build: .
